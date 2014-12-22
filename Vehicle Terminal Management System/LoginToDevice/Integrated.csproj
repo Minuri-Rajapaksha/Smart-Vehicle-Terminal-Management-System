@@ -1,0 +1,370 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{91F3045D-FFE2-4337-B8F2-54B98FD05BBB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LoginToDevice</RootNamespace>
+    <AssemblyName>LoginToDevice</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>b2c48bd2-963d-4549-9169-1fa021dce484</PlatformID>
+    <OSVersion>5.2</OSVersion>
+    <DeployDirSuffix>LoginToDevice</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 6 Professional SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Any CPU|Debug' ">
+    <RescoMobileFormsStudioStyle>Styles.rsxml</RescoMobileFormsStudioStyle>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Any CPU|AnyCPU' ">
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <GenerateSerializationAssemblies>off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.WindowsMobile.Forms, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="MobileFormsStudio.StyleManagers, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="MySql.Data.CF, Version=6.5.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Connector Net 6.5.4\Assemblies\v2.0\MySql.Data.CF.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="driver_assign_vehi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="driver_assign_vehi.designer.cs">
+      <DependentUpon>driver_assign_vehi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="driver_home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="driver_home.designer.cs">
+      <DependentUpon>driver_home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="driver_navi_park.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="driver_navi_park.designer.cs">
+      <DependentUpon>driver_navi_park.cs</DependentUpon>
+    </Compile>
+    <Compile Include="driver_navi_road.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="driver_navi_road.designer.cs">
+      <DependentUpon>driver_navi_road.cs</DependentUpon>
+    </Compile>
+    <Compile Include="driver_sms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="driver_sms.designer.cs">
+      <DependentUpon>driver_sms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GPS.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="edit_Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="edit_Profile.designer.cs">
+      <DependentUpon>edit_Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="motorolaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>motorolaDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="motorolaDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>motorolaDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="security_accept1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="security_accept1.designer.cs">
+      <DependentUpon>security_accept1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="security_accept2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="security_accept2.designer.cs">
+      <DependentUpon>security_accept2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="security_release1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="security_release1.designer.cs">
+      <DependentUpon>security_release1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="security_release2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="security_release2.designer.cs">
+      <DependentUpon>security_release2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Styles.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Styles.rsxml</DependentUpon>
+    </Compile>
+    <Compile Include="tally_berth1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tally_berth1.designer.cs">
+      <DependentUpon>tally_berth1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tally_berth2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tally_berth2.designer.cs">
+      <DependentUpon>tally_berth2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tally_home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tally_home.designer.cs">
+      <DependentUpon>tally_home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="security_home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="security_home.designer.cs">
+      <DependentUpon>security_home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tally_transship1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tally_transship1.designer.cs">
+      <DependentUpon>tally_transship1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="tally_transship2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="tally_transship2.designer.cs">
+      <DependentUpon>tally_transship2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference_new\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="driver_assign_vehi.resx">
+      <DependentUpon>driver_assign_vehi.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="driver_home.resx">
+      <DependentUpon>driver_home.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="driver_navi_park.resx">
+      <DependentUpon>driver_navi_park.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="driver_navi_road.resx">
+      <DependentUpon>driver_navi_road.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="edit_Profile.resx">
+      <DependentUpon>edit_Profile.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="driver_sms.resx">
+      <DependentUpon>driver_sms.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="security_accept1.resx">
+      <DependentUpon>security_accept1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="security_accept2.resx">
+      <DependentUpon>security_accept2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="security_release1.resx">
+      <DependentUpon>security_release1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="security_release2.resx">
+      <DependentUpon>security_release2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Styles.rsxml">
+      <Generator>MobileFormsStudioTool</Generator>
+      <LastGenOutput>Styles.designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tally_berth1.resx">
+      <DependentUpon>tally_berth1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tally_berth2.resx">
+      <DependentUpon>tally_berth2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tally_home.resx">
+      <DependentUpon>tally_home.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="security_home.resx">
+      <DependentUpon>security_home.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tally_transship1.resx">
+      <DependentUpon>tally_transship1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="tally_transship2.resx">
+      <DependentUpon>tally_transship2.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Image1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\btn_login.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\wall.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="motorolaDataSet.xsc">
+      <DependentUpon>motorolaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="motorolaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>motorolaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="motorolaDataSet.xss">
+      <DependentUpon>motorolaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="motorolaDataSet1.xsc">
+      <DependentUpon>motorolaDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="motorolaDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>motorolaDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="motorolaDataSet1.xss">
+      <DependentUpon>motorolaDataSet1.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://192.168.137.1/2012_10_04/Service1.asmx">
+      <UrlBehavior>Static</UrlBehavior>
+      <RelPath>Web References\WebReference_new\</RelPath>
+      <UpdateFromURL>http://192.168.137.1/2012_10_04/Service1.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WebReference_new\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WebReference_new\Service1.disco" />
+    <None Include="Web References\WebReference_new\Service1.wsdl" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

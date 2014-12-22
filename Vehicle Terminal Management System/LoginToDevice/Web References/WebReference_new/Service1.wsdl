@@ -1,0 +1,2273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="conString">
+        <s:complexType />
+      </s:element>
+      <s:element name="conStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="conStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="OpenConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="OpenConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="OpenConnectionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CloseConnection">
+        <s:complexType />
+      </s:element>
+      <s:element name="CloseConnectionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CloseConnectionResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Modify">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Search">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_of_columns" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="num_of_rows" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_ID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="loginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="loginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_visit_id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_visit_idResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_visit_idResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_feature_id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_feature_idResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_feature_idResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_feature_name">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="feature_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_feature_nameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_feature_nameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_special_notes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_special_notesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_special_notesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="release_vehi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="release_vehiResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="release_vehiResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="check_payment">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="check_paymentResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="check_paymentResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_slot_id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_slot_idResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_slot_idResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_slot_empty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="slot_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_slot_emptyResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="get_vehi_data">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_vehi_dataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_vehi_dataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_driver_assign">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="empID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_driver_assignResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="insert_vehi_feature">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="feature" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insert_vehi_featureResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="set_special_notes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="special_notes" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="set_special_notesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="update_vehi_status">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_vehi_statusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="update_tally_id">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tally_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_tally_idResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="storeImage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="imgArr" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="storeImageResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="retrieve_image">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieve_imageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retrieve_imageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_profile_pic">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_profile_picResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_profile_picResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="security_accept">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassis_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="security_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date_time" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="security_acceptResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="add_inquiry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassis_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date_time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="add_inquiryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="update_inquiry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassis_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date_time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_inquiryResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="security_release">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassis_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="security_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date_time" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="wharf_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="security_releaseResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="delete_vehi_key_and_insert_to_oldVehi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="delete_vehi_key_and_insert_to_oldVehiResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="tally_accept_transship">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassis_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tally_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date_time" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="tally_accept_transshipResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="send_sms">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sms_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="send_smsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="driver_assign_for_vehi">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="driver_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="chassi_no" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="driver_assign_for_vehiResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="update_slot_status">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="slot_id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="update_slot_statusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="count_rows">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="query" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="count_rowsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="count_rowsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkVehicleState">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkVehicleStateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkVehicleStateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isTallyCheck">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassi" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isTallyCheckResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isTallyCheckResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkDriverAssignIsOk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisFromTextBox" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkDriverAssignIsOkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="checkDriverAssignIsOkResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkSecurityIsOk">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chassisNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkSecurityIsOkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkSecurityIsOkResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValiedSlotBarcode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="slotBarcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValiedSlotBarcodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isValiedSlotBarcodeResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPhoneResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNaviLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="index" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getNaviLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getNaviLocationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Count_vehicles">
+        <s:complexType />
+      </s:element>
+      <s:element name="Count_vehiclesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Count_vehiclesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="acceptKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="day" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="acceptKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="acceptKeyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="releaseKey">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="releaseKeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="releaseKeyResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="vehicle_details">
+        <s:complexType />
+      </s:element>
+      <s:element name="vehicle_detailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="vehicle_detailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="nontranship_vehicle_details">
+        <s:complexType />
+      </s:element>
+      <s:element name="nontranship_vehicle_detailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nontranship_vehicle_detailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="inquiry_details">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="inquiry_detailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="inquiry_detailsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_id_nic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getDataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_employee_login_data">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="get_employee_login_dataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="get_employee_login_dataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="release">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="bc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="time_rel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Rid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="releaseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="releaseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="portchrgs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="portchrgsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="portchrgsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieve_vehicle_images">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chass" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieve_vehicle_imagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retrieve_vehicle_imagesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieve_vehi_image">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chas" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="retrieve_vehi_imageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="retrieve_vehi_imageResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="remove_employee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emp_id_nic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="remove_employeeResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="pay_charges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="chas" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="emp_id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bank" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="total" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="wharf" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="day" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="pay_chargesResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="conStringSoapIn">
+    <wsdl:part name="parameters" element="tns:conString" />
+  </wsdl:message>
+  <wsdl:message name="conStringSoapOut">
+    <wsdl:part name="parameters" element="tns:conStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="OpenConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:OpenConnection" />
+  </wsdl:message>
+  <wsdl:message name="OpenConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:OpenConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CloseConnectionSoapIn">
+    <wsdl:part name="parameters" element="tns:CloseConnection" />
+  </wsdl:message>
+  <wsdl:message name="CloseConnectionSoapOut">
+    <wsdl:part name="parameters" element="tns:CloseConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifySoapIn">
+    <wsdl:part name="parameters" element="tns:Modify" />
+  </wsdl:message>
+  <wsdl:message name="ModifySoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapIn">
+    <wsdl:part name="parameters" element="tns:Search" />
+  </wsdl:message>
+  <wsdl:message name="SearchSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="loginSoapIn">
+    <wsdl:part name="parameters" element="tns:login" />
+  </wsdl:message>
+  <wsdl:message name="loginSoapOut">
+    <wsdl:part name="parameters" element="tns:loginResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_visit_idSoapIn">
+    <wsdl:part name="parameters" element="tns:get_visit_id" />
+  </wsdl:message>
+  <wsdl:message name="get_visit_idSoapOut">
+    <wsdl:part name="parameters" element="tns:get_visit_idResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_feature_idSoapIn">
+    <wsdl:part name="parameters" element="tns:get_feature_id" />
+  </wsdl:message>
+  <wsdl:message name="get_feature_idSoapOut">
+    <wsdl:part name="parameters" element="tns:get_feature_idResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_feature_nameSoapIn">
+    <wsdl:part name="parameters" element="tns:get_feature_name" />
+  </wsdl:message>
+  <wsdl:message name="get_feature_nameSoapOut">
+    <wsdl:part name="parameters" element="tns:get_feature_nameResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_special_notesSoapIn">
+    <wsdl:part name="parameters" element="tns:get_special_notes" />
+  </wsdl:message>
+  <wsdl:message name="get_special_notesSoapOut">
+    <wsdl:part name="parameters" element="tns:get_special_notesResponse" />
+  </wsdl:message>
+  <wsdl:message name="release_vehiSoapIn">
+    <wsdl:part name="parameters" element="tns:release_vehi" />
+  </wsdl:message>
+  <wsdl:message name="release_vehiSoapOut">
+    <wsdl:part name="parameters" element="tns:release_vehiResponse" />
+  </wsdl:message>
+  <wsdl:message name="check_paymentSoapIn">
+    <wsdl:part name="parameters" element="tns:check_payment" />
+  </wsdl:message>
+  <wsdl:message name="check_paymentSoapOut">
+    <wsdl:part name="parameters" element="tns:check_paymentResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_slot_idSoapIn">
+    <wsdl:part name="parameters" element="tns:get_slot_id" />
+  </wsdl:message>
+  <wsdl:message name="get_slot_idSoapOut">
+    <wsdl:part name="parameters" element="tns:get_slot_idResponse" />
+  </wsdl:message>
+  <wsdl:message name="update_slot_emptySoapIn">
+    <wsdl:part name="parameters" element="tns:update_slot_empty" />
+  </wsdl:message>
+  <wsdl:message name="update_slot_emptySoapOut">
+    <wsdl:part name="parameters" element="tns:update_slot_emptyResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_vehi_dataSoapIn">
+    <wsdl:part name="parameters" element="tns:get_vehi_data" />
+  </wsdl:message>
+  <wsdl:message name="get_vehi_dataSoapOut">
+    <wsdl:part name="parameters" element="tns:get_vehi_dataResponse" />
+  </wsdl:message>
+  <wsdl:message name="update_driver_assignSoapIn">
+    <wsdl:part name="parameters" element="tns:update_driver_assign" />
+  </wsdl:message>
+  <wsdl:message name="update_driver_assignSoapOut">
+    <wsdl:part name="parameters" element="tns:update_driver_assignResponse" />
+  </wsdl:message>
+  <wsdl:message name="insert_vehi_featureSoapIn">
+    <wsdl:part name="parameters" element="tns:insert_vehi_feature" />
+  </wsdl:message>
+  <wsdl:message name="insert_vehi_featureSoapOut">
+    <wsdl:part name="parameters" element="tns:insert_vehi_featureResponse" />
+  </wsdl:message>
+  <wsdl:message name="set_special_notesSoapIn">
+    <wsdl:part name="parameters" element="tns:set_special_notes" />
+  </wsdl:message>
+  <wsdl:message name="set_special_notesSoapOut">
+    <wsdl:part name="parameters" element="tns:set_special_notesResponse" />
+  </wsdl:message>
+  <wsdl:message name="update_vehi_statusSoapIn">
+    <wsdl:part name="parameters" element="tns:update_vehi_status" />
+  </wsdl:message>
+  <wsdl:message name="update_vehi_statusSoapOut">
+    <wsdl:part name="parameters" element="tns:update_vehi_statusResponse" />
+  </wsdl:message>
+  <wsdl:message name="update_tally_idSoapIn">
+    <wsdl:part name="parameters" element="tns:update_tally_id" />
+  </wsdl:message>
+  <wsdl:message name="update_tally_idSoapOut">
+    <wsdl:part name="parameters" element="tns:update_tally_idResponse" />
+  </wsdl:message>
+  <wsdl:message name="storeImageSoapIn">
+    <wsdl:part name="parameters" element="tns:storeImage" />
+  </wsdl:message>
+  <wsdl:message name="storeImageSoapOut">
+    <wsdl:part name="parameters" element="tns:storeImageResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieve_imageSoapIn">
+    <wsdl:part name="parameters" element="tns:retrieve_image" />
+  </wsdl:message>
+  <wsdl:message name="retrieve_imageSoapOut">
+    <wsdl:part name="parameters" element="tns:retrieve_imageResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_profile_picSoapIn">
+    <wsdl:part name="parameters" element="tns:get_profile_pic" />
+  </wsdl:message>
+  <wsdl:message name="get_profile_picSoapOut">
+    <wsdl:part name="parameters" element="tns:get_profile_picResponse" />
+  </wsdl:message>
+  <wsdl:message name="security_acceptSoapIn">
+    <wsdl:part name="parameters" element="tns:security_accept" />
+  </wsdl:message>
+  <wsdl:message name="security_acceptSoapOut">
+    <wsdl:part name="parameters" element="tns:security_acceptResponse" />
+  </wsdl:message>
+  <wsdl:message name="add_inquirySoapIn">
+    <wsdl:part name="parameters" element="tns:add_inquiry" />
+  </wsdl:message>
+  <wsdl:message name="add_inquirySoapOut">
+    <wsdl:part name="parameters" element="tns:add_inquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="update_inquirySoapIn">
+    <wsdl:part name="parameters" element="tns:update_inquiry" />
+  </wsdl:message>
+  <wsdl:message name="update_inquirySoapOut">
+    <wsdl:part name="parameters" element="tns:update_inquiryResponse" />
+  </wsdl:message>
+  <wsdl:message name="security_releaseSoapIn">
+    <wsdl:part name="parameters" element="tns:security_release" />
+  </wsdl:message>
+  <wsdl:message name="security_releaseSoapOut">
+    <wsdl:part name="parameters" element="tns:security_releaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="delete_vehi_key_and_insert_to_oldVehiSoapIn">
+    <wsdl:part name="parameters" element="tns:delete_vehi_key_and_insert_to_oldVehi" />
+  </wsdl:message>
+  <wsdl:message name="delete_vehi_key_and_insert_to_oldVehiSoapOut">
+    <wsdl:part name="parameters" element="tns:delete_vehi_key_and_insert_to_oldVehiResponse" />
+  </wsdl:message>
+  <wsdl:message name="tally_accept_transshipSoapIn">
+    <wsdl:part name="parameters" element="tns:tally_accept_transship" />
+  </wsdl:message>
+  <wsdl:message name="tally_accept_transshipSoapOut">
+    <wsdl:part name="parameters" element="tns:tally_accept_transshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="send_smsSoapIn">
+    <wsdl:part name="parameters" element="tns:send_sms" />
+  </wsdl:message>
+  <wsdl:message name="send_smsSoapOut">
+    <wsdl:part name="parameters" element="tns:send_smsResponse" />
+  </wsdl:message>
+  <wsdl:message name="driver_assign_for_vehiSoapIn">
+    <wsdl:part name="parameters" element="tns:driver_assign_for_vehi" />
+  </wsdl:message>
+  <wsdl:message name="driver_assign_for_vehiSoapOut">
+    <wsdl:part name="parameters" element="tns:driver_assign_for_vehiResponse" />
+  </wsdl:message>
+  <wsdl:message name="update_slot_statusSoapIn">
+    <wsdl:part name="parameters" element="tns:update_slot_status" />
+  </wsdl:message>
+  <wsdl:message name="update_slot_statusSoapOut">
+    <wsdl:part name="parameters" element="tns:update_slot_statusResponse" />
+  </wsdl:message>
+  <wsdl:message name="count_rowsSoapIn">
+    <wsdl:part name="parameters" element="tns:count_rows" />
+  </wsdl:message>
+  <wsdl:message name="count_rowsSoapOut">
+    <wsdl:part name="parameters" element="tns:count_rowsResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkVehicleStateSoapIn">
+    <wsdl:part name="parameters" element="tns:checkVehicleState" />
+  </wsdl:message>
+  <wsdl:message name="checkVehicleStateSoapOut">
+    <wsdl:part name="parameters" element="tns:checkVehicleStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="isTallyCheckSoapIn">
+    <wsdl:part name="parameters" element="tns:isTallyCheck" />
+  </wsdl:message>
+  <wsdl:message name="isTallyCheckSoapOut">
+    <wsdl:part name="parameters" element="tns:isTallyCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkDriverAssignIsOkSoapIn">
+    <wsdl:part name="parameters" element="tns:checkDriverAssignIsOk" />
+  </wsdl:message>
+  <wsdl:message name="checkDriverAssignIsOkSoapOut">
+    <wsdl:part name="parameters" element="tns:checkDriverAssignIsOkResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkSecurityIsOkSoapIn">
+    <wsdl:part name="parameters" element="tns:checkSecurityIsOk" />
+  </wsdl:message>
+  <wsdl:message name="checkSecurityIsOkSoapOut">
+    <wsdl:part name="parameters" element="tns:checkSecurityIsOkResponse" />
+  </wsdl:message>
+  <wsdl:message name="isValiedSlotBarcodeSoapIn">
+    <wsdl:part name="parameters" element="tns:isValiedSlotBarcode" />
+  </wsdl:message>
+  <wsdl:message name="isValiedSlotBarcodeSoapOut">
+    <wsdl:part name="parameters" element="tns:isValiedSlotBarcodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:getPhone" />
+  </wsdl:message>
+  <wsdl:message name="getPhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:getPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="getNaviLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:getNaviLocation" />
+  </wsdl:message>
+  <wsdl:message name="getNaviLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:getNaviLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Count_vehiclesSoapIn">
+    <wsdl:part name="parameters" element="tns:Count_vehicles" />
+  </wsdl:message>
+  <wsdl:message name="Count_vehiclesSoapOut">
+    <wsdl:part name="parameters" element="tns:Count_vehiclesResponse" />
+  </wsdl:message>
+  <wsdl:message name="acceptKeySoapIn">
+    <wsdl:part name="parameters" element="tns:acceptKey" />
+  </wsdl:message>
+  <wsdl:message name="acceptKeySoapOut">
+    <wsdl:part name="parameters" element="tns:acceptKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="releaseKeySoapIn">
+    <wsdl:part name="parameters" element="tns:releaseKey" />
+  </wsdl:message>
+  <wsdl:message name="releaseKeySoapOut">
+    <wsdl:part name="parameters" element="tns:releaseKeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="vehicle_detailsSoapIn">
+    <wsdl:part name="parameters" element="tns:vehicle_details" />
+  </wsdl:message>
+  <wsdl:message name="vehicle_detailsSoapOut">
+    <wsdl:part name="parameters" element="tns:vehicle_detailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="nontranship_vehicle_detailsSoapIn">
+    <wsdl:part name="parameters" element="tns:nontranship_vehicle_details" />
+  </wsdl:message>
+  <wsdl:message name="nontranship_vehicle_detailsSoapOut">
+    <wsdl:part name="parameters" element="tns:nontranship_vehicle_detailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="inquiry_detailsSoapIn">
+    <wsdl:part name="parameters" element="tns:inquiry_details" />
+  </wsdl:message>
+  <wsdl:message name="inquiry_detailsSoapOut">
+    <wsdl:part name="parameters" element="tns:inquiry_detailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getData" />
+  </wsdl:message>
+  <wsdl:message name="getDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="get_employee_login_dataSoapIn">
+    <wsdl:part name="parameters" element="tns:get_employee_login_data" />
+  </wsdl:message>
+  <wsdl:message name="get_employee_login_dataSoapOut">
+    <wsdl:part name="parameters" element="tns:get_employee_login_dataResponse" />
+  </wsdl:message>
+  <wsdl:message name="releaseSoapIn">
+    <wsdl:part name="parameters" element="tns:release" />
+  </wsdl:message>
+  <wsdl:message name="releaseSoapOut">
+    <wsdl:part name="parameters" element="tns:releaseResponse" />
+  </wsdl:message>
+  <wsdl:message name="portchrgsSoapIn">
+    <wsdl:part name="parameters" element="tns:portchrgs" />
+  </wsdl:message>
+  <wsdl:message name="portchrgsSoapOut">
+    <wsdl:part name="parameters" element="tns:portchrgsResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieve_vehicle_imagesSoapIn">
+    <wsdl:part name="parameters" element="tns:retrieve_vehicle_images" />
+  </wsdl:message>
+  <wsdl:message name="retrieve_vehicle_imagesSoapOut">
+    <wsdl:part name="parameters" element="tns:retrieve_vehicle_imagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="retrieve_vehi_imageSoapIn">
+    <wsdl:part name="parameters" element="tns:retrieve_vehi_image" />
+  </wsdl:message>
+  <wsdl:message name="retrieve_vehi_imageSoapOut">
+    <wsdl:part name="parameters" element="tns:retrieve_vehi_imageResponse" />
+  </wsdl:message>
+  <wsdl:message name="remove_employeeSoapIn">
+    <wsdl:part name="parameters" element="tns:remove_employee" />
+  </wsdl:message>
+  <wsdl:message name="remove_employeeSoapOut">
+    <wsdl:part name="parameters" element="tns:remove_employeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="pay_chargesSoapIn">
+    <wsdl:part name="parameters" element="tns:pay_charges" />
+  </wsdl:message>
+  <wsdl:message name="pay_chargesSoapOut">
+    <wsdl:part name="parameters" element="tns:pay_chargesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="conString">
+      <wsdl:input message="tns:conStringSoapIn" />
+      <wsdl:output message="tns:conStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="OpenConnection">
+      <wsdl:input message="tns:OpenConnectionSoapIn" />
+      <wsdl:output message="tns:OpenConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CloseConnection">
+      <wsdl:input message="tns:CloseConnectionSoapIn" />
+      <wsdl:output message="tns:CloseConnectionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Modify">
+      <wsdl:input message="tns:ModifySoapIn" />
+      <wsdl:output message="tns:ModifySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <wsdl:input message="tns:SearchSoapIn" />
+      <wsdl:output message="tns:SearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <wsdl:input message="tns:loginSoapIn" />
+      <wsdl:output message="tns:loginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_visit_id">
+      <wsdl:input message="tns:get_visit_idSoapIn" />
+      <wsdl:output message="tns:get_visit_idSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_feature_id">
+      <wsdl:input message="tns:get_feature_idSoapIn" />
+      <wsdl:output message="tns:get_feature_idSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_feature_name">
+      <wsdl:input message="tns:get_feature_nameSoapIn" />
+      <wsdl:output message="tns:get_feature_nameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_special_notes">
+      <wsdl:input message="tns:get_special_notesSoapIn" />
+      <wsdl:output message="tns:get_special_notesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="release_vehi">
+      <wsdl:input message="tns:release_vehiSoapIn" />
+      <wsdl:output message="tns:release_vehiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="check_payment">
+      <wsdl:input message="tns:check_paymentSoapIn" />
+      <wsdl:output message="tns:check_paymentSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_slot_id">
+      <wsdl:input message="tns:get_slot_idSoapIn" />
+      <wsdl:output message="tns:get_slot_idSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update_slot_empty">
+      <wsdl:input message="tns:update_slot_emptySoapIn" />
+      <wsdl:output message="tns:update_slot_emptySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_vehi_data">
+      <wsdl:input message="tns:get_vehi_dataSoapIn" />
+      <wsdl:output message="tns:get_vehi_dataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update_driver_assign">
+      <wsdl:input message="tns:update_driver_assignSoapIn" />
+      <wsdl:output message="tns:update_driver_assignSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert_vehi_feature">
+      <wsdl:input message="tns:insert_vehi_featureSoapIn" />
+      <wsdl:output message="tns:insert_vehi_featureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="set_special_notes">
+      <wsdl:input message="tns:set_special_notesSoapIn" />
+      <wsdl:output message="tns:set_special_notesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update_vehi_status">
+      <wsdl:input message="tns:update_vehi_statusSoapIn" />
+      <wsdl:output message="tns:update_vehi_statusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update_tally_id">
+      <wsdl:input message="tns:update_tally_idSoapIn" />
+      <wsdl:output message="tns:update_tally_idSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="storeImage">
+      <wsdl:input message="tns:storeImageSoapIn" />
+      <wsdl:output message="tns:storeImageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieve_image">
+      <wsdl:input message="tns:retrieve_imageSoapIn" />
+      <wsdl:output message="tns:retrieve_imageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_profile_pic">
+      <wsdl:input message="tns:get_profile_picSoapIn" />
+      <wsdl:output message="tns:get_profile_picSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="security_accept">
+      <wsdl:input message="tns:security_acceptSoapIn" />
+      <wsdl:output message="tns:security_acceptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="add_inquiry">
+      <wsdl:input message="tns:add_inquirySoapIn" />
+      <wsdl:output message="tns:add_inquirySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update_inquiry">
+      <wsdl:input message="tns:update_inquirySoapIn" />
+      <wsdl:output message="tns:update_inquirySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="security_release">
+      <wsdl:input message="tns:security_releaseSoapIn" />
+      <wsdl:output message="tns:security_releaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="delete_vehi_key_and_insert_to_oldVehi">
+      <wsdl:input message="tns:delete_vehi_key_and_insert_to_oldVehiSoapIn" />
+      <wsdl:output message="tns:delete_vehi_key_and_insert_to_oldVehiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="tally_accept_transship">
+      <wsdl:input message="tns:tally_accept_transshipSoapIn" />
+      <wsdl:output message="tns:tally_accept_transshipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="send_sms">
+      <wsdl:input message="tns:send_smsSoapIn" />
+      <wsdl:output message="tns:send_smsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="driver_assign_for_vehi">
+      <wsdl:input message="tns:driver_assign_for_vehiSoapIn" />
+      <wsdl:output message="tns:driver_assign_for_vehiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="update_slot_status">
+      <wsdl:input message="tns:update_slot_statusSoapIn" />
+      <wsdl:output message="tns:update_slot_statusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="count_rows">
+      <wsdl:input message="tns:count_rowsSoapIn" />
+      <wsdl:output message="tns:count_rowsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkVehicleState">
+      <wsdl:input message="tns:checkVehicleStateSoapIn" />
+      <wsdl:output message="tns:checkVehicleStateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isTallyCheck">
+      <wsdl:input message="tns:isTallyCheckSoapIn" />
+      <wsdl:output message="tns:isTallyCheckSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkDriverAssignIsOk">
+      <wsdl:input message="tns:checkDriverAssignIsOkSoapIn" />
+      <wsdl:output message="tns:checkDriverAssignIsOkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="checkSecurityIsOk">
+      <wsdl:input message="tns:checkSecurityIsOkSoapIn" />
+      <wsdl:output message="tns:checkSecurityIsOkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isValiedSlotBarcode">
+      <wsdl:input message="tns:isValiedSlotBarcodeSoapIn" />
+      <wsdl:output message="tns:isValiedSlotBarcodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPhone">
+      <wsdl:input message="tns:getPhoneSoapIn" />
+      <wsdl:output message="tns:getPhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getNaviLocation">
+      <wsdl:input message="tns:getNaviLocationSoapIn" />
+      <wsdl:output message="tns:getNaviLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Count_vehicles">
+      <wsdl:input message="tns:Count_vehiclesSoapIn" />
+      <wsdl:output message="tns:Count_vehiclesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="acceptKey">
+      <wsdl:input message="tns:acceptKeySoapIn" />
+      <wsdl:output message="tns:acceptKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="releaseKey">
+      <wsdl:input message="tns:releaseKeySoapIn" />
+      <wsdl:output message="tns:releaseKeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="vehicle_details">
+      <wsdl:input message="tns:vehicle_detailsSoapIn" />
+      <wsdl:output message="tns:vehicle_detailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="nontranship_vehicle_details">
+      <wsdl:input message="tns:nontranship_vehicle_detailsSoapIn" />
+      <wsdl:output message="tns:nontranship_vehicle_detailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="inquiry_details">
+      <wsdl:input message="tns:inquiry_detailsSoapIn" />
+      <wsdl:output message="tns:inquiry_detailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <wsdl:input message="tns:getDataSoapIn" />
+      <wsdl:output message="tns:getDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="get_employee_login_data">
+      <wsdl:input message="tns:get_employee_login_dataSoapIn" />
+      <wsdl:output message="tns:get_employee_login_dataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="release">
+      <wsdl:input message="tns:releaseSoapIn" />
+      <wsdl:output message="tns:releaseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="portchrgs">
+      <wsdl:input message="tns:portchrgsSoapIn" />
+      <wsdl:output message="tns:portchrgsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieve_vehicle_images">
+      <wsdl:input message="tns:retrieve_vehicle_imagesSoapIn" />
+      <wsdl:output message="tns:retrieve_vehicle_imagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="retrieve_vehi_image">
+      <wsdl:input message="tns:retrieve_vehi_imageSoapIn" />
+      <wsdl:output message="tns:retrieve_vehi_imageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="remove_employee">
+      <wsdl:input message="tns:remove_employeeSoapIn" />
+      <wsdl:output message="tns:remove_employeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="pay_charges">
+      <wsdl:input message="tns:pay_chargesSoapIn" />
+      <wsdl:output message="tns:pay_chargesSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="conString">
+      <soap:operation soapAction="http://tempuri.org/conString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenConnection">
+      <soap:operation soapAction="http://tempuri.org/OpenConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseConnection">
+      <soap:operation soapAction="http://tempuri.org/CloseConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modify">
+      <soap:operation soapAction="http://tempuri.org/Modify" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap:operation soapAction="http://tempuri.org/Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap:operation soapAction="http://tempuri.org/login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_visit_id">
+      <soap:operation soapAction="http://tempuri.org/get_visit_id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_feature_id">
+      <soap:operation soapAction="http://tempuri.org/get_feature_id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_feature_name">
+      <soap:operation soapAction="http://tempuri.org/get_feature_name" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_special_notes">
+      <soap:operation soapAction="http://tempuri.org/get_special_notes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="release_vehi">
+      <soap:operation soapAction="http://tempuri.org/release_vehi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="check_payment">
+      <soap:operation soapAction="http://tempuri.org/check_payment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_slot_id">
+      <soap:operation soapAction="http://tempuri.org/get_slot_id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_slot_empty">
+      <soap:operation soapAction="http://tempuri.org/update_slot_empty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_vehi_data">
+      <soap:operation soapAction="http://tempuri.org/get_vehi_data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_driver_assign">
+      <soap:operation soapAction="http://tempuri.org/update_driver_assign" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_vehi_feature">
+      <soap:operation soapAction="http://tempuri.org/insert_vehi_feature" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="set_special_notes">
+      <soap:operation soapAction="http://tempuri.org/set_special_notes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_vehi_status">
+      <soap:operation soapAction="http://tempuri.org/update_vehi_status" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_tally_id">
+      <soap:operation soapAction="http://tempuri.org/update_tally_id" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeImage">
+      <soap:operation soapAction="http://tempuri.org/storeImage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieve_image">
+      <soap:operation soapAction="http://tempuri.org/retrieve_image" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_profile_pic">
+      <soap:operation soapAction="http://tempuri.org/get_profile_pic" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="security_accept">
+      <soap:operation soapAction="http://tempuri.org/security_accept" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_inquiry">
+      <soap:operation soapAction="http://tempuri.org/add_inquiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_inquiry">
+      <soap:operation soapAction="http://tempuri.org/update_inquiry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="security_release">
+      <soap:operation soapAction="http://tempuri.org/security_release" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_vehi_key_and_insert_to_oldVehi">
+      <soap:operation soapAction="http://tempuri.org/delete_vehi_key_and_insert_to_oldVehi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tally_accept_transship">
+      <soap:operation soapAction="http://tempuri.org/tally_accept_transship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="send_sms">
+      <soap:operation soapAction="http://tempuri.org/send_sms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="driver_assign_for_vehi">
+      <soap:operation soapAction="http://tempuri.org/driver_assign_for_vehi" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_slot_status">
+      <soap:operation soapAction="http://tempuri.org/update_slot_status" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="count_rows">
+      <soap:operation soapAction="http://tempuri.org/count_rows" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkVehicleState">
+      <soap:operation soapAction="http://tempuri.org/checkVehicleState" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isTallyCheck">
+      <soap:operation soapAction="http://tempuri.org/isTallyCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkDriverAssignIsOk">
+      <soap:operation soapAction="http://tempuri.org/checkDriverAssignIsOk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkSecurityIsOk">
+      <soap:operation soapAction="http://tempuri.org/checkSecurityIsOk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValiedSlotBarcode">
+      <soap:operation soapAction="http://tempuri.org/isValiedSlotBarcode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhone">
+      <soap:operation soapAction="http://tempuri.org/getPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNaviLocation">
+      <soap:operation soapAction="http://tempuri.org/getNaviLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Count_vehicles">
+      <soap:operation soapAction="http://tempuri.org/Count_vehicles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acceptKey">
+      <soap:operation soapAction="http://tempuri.org/acceptKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseKey">
+      <soap:operation soapAction="http://tempuri.org/releaseKey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vehicle_details">
+      <soap:operation soapAction="http://tempuri.org/vehicle_details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nontranship_vehicle_details">
+      <soap:operation soapAction="http://tempuri.org/nontranship_vehicle_details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inquiry_details">
+      <soap:operation soapAction="http://tempuri.org/inquiry_details" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <soap:operation soapAction="http://tempuri.org/getData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_employee_login_data">
+      <soap:operation soapAction="http://tempuri.org/get_employee_login_data" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="release">
+      <soap:operation soapAction="http://tempuri.org/release" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="portchrgs">
+      <soap:operation soapAction="http://tempuri.org/portchrgs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieve_vehicle_images">
+      <soap:operation soapAction="http://tempuri.org/retrieve_vehicle_images" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieve_vehi_image">
+      <soap:operation soapAction="http://tempuri.org/retrieve_vehi_image" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remove_employee">
+      <soap:operation soapAction="http://tempuri.org/remove_employee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pay_charges">
+      <soap:operation soapAction="http://tempuri.org/pay_charges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="conString">
+      <soap12:operation soapAction="http://tempuri.org/conString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenConnection">
+      <soap12:operation soapAction="http://tempuri.org/OpenConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CloseConnection">
+      <soap12:operation soapAction="http://tempuri.org/CloseConnection" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Modify">
+      <soap12:operation soapAction="http://tempuri.org/Modify" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Search">
+      <soap12:operation soapAction="http://tempuri.org/Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="login">
+      <soap12:operation soapAction="http://tempuri.org/login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_visit_id">
+      <soap12:operation soapAction="http://tempuri.org/get_visit_id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_feature_id">
+      <soap12:operation soapAction="http://tempuri.org/get_feature_id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_feature_name">
+      <soap12:operation soapAction="http://tempuri.org/get_feature_name" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_special_notes">
+      <soap12:operation soapAction="http://tempuri.org/get_special_notes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="release_vehi">
+      <soap12:operation soapAction="http://tempuri.org/release_vehi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="check_payment">
+      <soap12:operation soapAction="http://tempuri.org/check_payment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_slot_id">
+      <soap12:operation soapAction="http://tempuri.org/get_slot_id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_slot_empty">
+      <soap12:operation soapAction="http://tempuri.org/update_slot_empty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_vehi_data">
+      <soap12:operation soapAction="http://tempuri.org/get_vehi_data" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_driver_assign">
+      <soap12:operation soapAction="http://tempuri.org/update_driver_assign" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert_vehi_feature">
+      <soap12:operation soapAction="http://tempuri.org/insert_vehi_feature" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="set_special_notes">
+      <soap12:operation soapAction="http://tempuri.org/set_special_notes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_vehi_status">
+      <soap12:operation soapAction="http://tempuri.org/update_vehi_status" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_tally_id">
+      <soap12:operation soapAction="http://tempuri.org/update_tally_id" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="storeImage">
+      <soap12:operation soapAction="http://tempuri.org/storeImage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieve_image">
+      <soap12:operation soapAction="http://tempuri.org/retrieve_image" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_profile_pic">
+      <soap12:operation soapAction="http://tempuri.org/get_profile_pic" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="security_accept">
+      <soap12:operation soapAction="http://tempuri.org/security_accept" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="add_inquiry">
+      <soap12:operation soapAction="http://tempuri.org/add_inquiry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_inquiry">
+      <soap12:operation soapAction="http://tempuri.org/update_inquiry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="security_release">
+      <soap12:operation soapAction="http://tempuri.org/security_release" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delete_vehi_key_and_insert_to_oldVehi">
+      <soap12:operation soapAction="http://tempuri.org/delete_vehi_key_and_insert_to_oldVehi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="tally_accept_transship">
+      <soap12:operation soapAction="http://tempuri.org/tally_accept_transship" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="send_sms">
+      <soap12:operation soapAction="http://tempuri.org/send_sms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="driver_assign_for_vehi">
+      <soap12:operation soapAction="http://tempuri.org/driver_assign_for_vehi" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="update_slot_status">
+      <soap12:operation soapAction="http://tempuri.org/update_slot_status" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="count_rows">
+      <soap12:operation soapAction="http://tempuri.org/count_rows" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkVehicleState">
+      <soap12:operation soapAction="http://tempuri.org/checkVehicleState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isTallyCheck">
+      <soap12:operation soapAction="http://tempuri.org/isTallyCheck" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkDriverAssignIsOk">
+      <soap12:operation soapAction="http://tempuri.org/checkDriverAssignIsOk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="checkSecurityIsOk">
+      <soap12:operation soapAction="http://tempuri.org/checkSecurityIsOk" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValiedSlotBarcode">
+      <soap12:operation soapAction="http://tempuri.org/isValiedSlotBarcode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPhone">
+      <soap12:operation soapAction="http://tempuri.org/getPhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getNaviLocation">
+      <soap12:operation soapAction="http://tempuri.org/getNaviLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Count_vehicles">
+      <soap12:operation soapAction="http://tempuri.org/Count_vehicles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="acceptKey">
+      <soap12:operation soapAction="http://tempuri.org/acceptKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="releaseKey">
+      <soap12:operation soapAction="http://tempuri.org/releaseKey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="vehicle_details">
+      <soap12:operation soapAction="http://tempuri.org/vehicle_details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nontranship_vehicle_details">
+      <soap12:operation soapAction="http://tempuri.org/nontranship_vehicle_details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="inquiry_details">
+      <soap12:operation soapAction="http://tempuri.org/inquiry_details" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getData">
+      <soap12:operation soapAction="http://tempuri.org/getData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="get_employee_login_data">
+      <soap12:operation soapAction="http://tempuri.org/get_employee_login_data" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="release">
+      <soap12:operation soapAction="http://tempuri.org/release" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="portchrgs">
+      <soap12:operation soapAction="http://tempuri.org/portchrgs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieve_vehicle_images">
+      <soap12:operation soapAction="http://tempuri.org/retrieve_vehicle_images" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="retrieve_vehi_image">
+      <soap12:operation soapAction="http://tempuri.org/retrieve_vehi_image" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remove_employee">
+      <soap12:operation soapAction="http://tempuri.org/remove_employee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pay_charges">
+      <soap12:operation soapAction="http://tempuri.org/pay_charges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://192.168.137.1/2012_10_04/Service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://192.168.137.1/2012_10_04/Service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

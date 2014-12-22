@@ -1,0 +1,399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<GlobalStyles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ThemeName="C:\Program Files (x86)\Resco MobileApp Studio 2012\Themes\WindowsPhoneLight">
+  <Styles>
+    <Style Name="Header1" Style="" Type="TextCell">
+      <Properties>
+        <Property Name="ForeColor" Type="System.Int32">
+          <Value>-16777216</Value>
+        </Property>
+        <Property Name="FontSize" Type="System.Single">
+          <Value>28</Value>
+        </Property>
+        <Property Name="BackColor" Type="System.Int32">
+          <Value>16777215</Value>
+        </Property>
+        <Property Name="HorizontalAlignment" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="VerticalAlignment" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="FontWeight" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="Header2" Style="Header1" Type="TextCell">
+      <Properties>
+        <Property Name="FontSize" Type="System.Single">
+          <Value>20</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="NormalText" Style="Header1" Type="TextCell">
+      <Properties>
+        <Property Name="FontWeight" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="FontSize" Type="System.Single">
+          <Value>18</Value>
+        </Property>
+        <Property Name="VerticalAlignment" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="NormalRow" Style="" Type="Row">
+      <Properties>
+        <Property Name="BackColor" Type="System.Int32">
+          <Value>-1</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="SelectedRow" Style="" Type="Row">
+      <Properties>
+        <Property Name="BackColor" Type="System.Int32">
+          <Value>-16728065</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="SimpleButton" Style="" Type="ButtonCell">
+      <Properties>
+        <Property Name="BorderColor" Type="System.Int32">
+          <Value>-16777216</Value>
+        </Property>
+        <Property Name="PressedBorderColor" Type="System.Int32">
+          <Value>-16777216</Value>
+        </Property>
+        <Property Name="ForeColor" Type="System.Int32">
+          <Value>-16777216</Value>
+        </Property>
+        <Property Name="FontSize" Type="System.Single">
+          <Value>24</Value>
+        </Property>
+        <Property Name="FontWeight" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="PressedBackColor" Type="System.Int32">
+          <Value>-16777216</Value>
+        </Property>
+        <Property Name="PressedForeColor" Type="System.Int32">
+          <Value>-16728065</Value>
+        </Property>
+        <Property Name="BackColor" Type="System.Int32">
+          <Value>16777215</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="OrangeButton" Style="" Type="ButtonCell">
+      <Properties>
+        <Property Name="BorderColor" Type="System.Int32">
+          <Value>-16728065</Value>
+        </Property>
+        <Property Name="PressedBorderColor" Type="System.Int32">
+          <Value>-16728065</Value>
+        </Property>
+        <Property Name="ForeColor" Type="System.Int32">
+          <Value>-16728065</Value>
+        </Property>
+        <Property Name="FontSize" Type="System.Single">
+          <Value>24</Value>
+        </Property>
+        <Property Name="PressedBackColor" Type="System.Int32">
+          <Value>-16728065</Value>
+        </Property>
+        <Property Name="PressedForeColor" Type="System.Int32">
+          <Value>-1</Value>
+        </Property>
+        <Property Name="FontWeight" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="BackColor" Type="System.Int32">
+          <Value>16777215</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="BlueHeader1" Style="Header1" Type="TextCell">
+      <Properties>
+        <Property Name="ForeColor" Type="System.Int32">
+          <Value>-16728065</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="NewTextCellStyle" Style="Header2" Type="TextCell">
+      <Properties />
+    </Style>
+    <Style Name="BaseItem" Style="" Type="DVItem">
+      <Properties>
+        <Property Name="LabelBackColor" Type="System.Int32">
+          <Value>16777215</Value>
+        </Property>
+        <Property Name="LabelForeColor" Type="System.Int32">
+          <Value>-16777216</Value>
+        </Property>
+        <Property Name="LabelFontSize" Type="System.Int32">
+          <Value>24</Value>
+        </Property>
+        <Property Name="LabelFontWeight" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="LabelWidth" Type="System.Int32">
+          <Value>140</Value>
+        </Property>
+        <Property Name="LabelHeight" Type="System.Int32">
+          <Value>12</Value>
+        </Property>
+        <Property Name="LabelAlignment" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="LabelStyle" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="VerticalAlignment" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="ErrorBackColor" Type="System.Int32">
+          <Value>-65536</Value>
+        </Property>
+        <Property Name="ErrorStyle" Type="System.Int32">
+          <Value>2</Value>
+        </Property>
+        <Property Name="ItemBorder" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="TextAlignment" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="TextBackColor" Type="System.Int32">
+          <Value>16777215</Value>
+        </Property>
+        <Property Name="TextForeColor" Type="System.Int32">
+          <Value>-16728065</Value>
+        </Property>
+        <Property Name="TextFontSize" Type="System.Int32">
+          <Value>24</Value>
+        </Property>
+        <Property Name="TextFontWeight" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="BlueTextBox" Style="BaseItem" Type="DVTextBox">
+      <Properties>
+        <Property Name="MultiLine" Type="System.Boolean">
+          <Value>True</Value>
+        </Property>
+        <Property Name="VerticalAlignment" Type="System.Int32">
+          <Value>2</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="MainCaption" Style="" Type="DVCaption">
+      <Properties>
+        <Property Name="LabelBackColor" Type="System.Int32">
+          <Value>-16728065</Value>
+        </Property>
+        <Property Name="LabelForeColor" Type="System.Int32">
+          <Value>-1</Value>
+        </Property>
+        <Property Name="LabelFontSize" Type="System.Int32">
+          <Value>28</Value>
+        </Property>
+        <Property Name="LabelFontWeight" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="LabelWidth" Type="System.Int32">
+          <Value>-1</Value>
+        </Property>
+        <Property Name="LabelHeight" Type="System.Int32">
+          <Value>12</Value>
+        </Property>
+        <Property Name="LabelAlignment" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="LabelStyle" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="VerticalAlignment" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="ErrorBackColor" Type="System.Int32">
+          <Value>-65536</Value>
+        </Property>
+        <Property Name="ErrorStyle" Type="System.Int32">
+          <Value>2</Value>
+        </Property>
+        <Property Name="ItemBorder" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="TextAlignment" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="TextBackColor" Type="System.Int32">
+          <Value>16777215</Value>
+        </Property>
+        <Property Name="TextForeColor" Type="System.Int32">
+          <Value>-16777216</Value>
+        </Property>
+        <Property Name="TextFontSize" Type="System.Int32">
+          <Value>10</Value>
+        </Property>
+        <Property Name="TextFontWeight" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="Caption" Style="" Type="DVCaption">
+      <Properties>
+        <Property Name="LabelBackColor" Type="System.Int32">
+          <Value>16777215</Value>
+        </Property>
+        <Property Name="LabelForeColor" Type="System.Int32">
+          <Value>-16728065</Value>
+        </Property>
+        <Property Name="LabelFontSize" Type="System.Int32">
+          <Value>24</Value>
+        </Property>
+        <Property Name="LabelFontWeight" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="LabelWidth" Type="System.Int32">
+          <Value>-1</Value>
+        </Property>
+        <Property Name="LabelHeight" Type="System.Int32">
+          <Value>12</Value>
+        </Property>
+        <Property Name="LabelAlignment" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="LabelStyle" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="VerticalAlignment" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="ErrorBackColor" Type="System.Int32">
+          <Value>-65536</Value>
+        </Property>
+        <Property Name="ErrorStyle" Type="System.Int32">
+          <Value>2</Value>
+        </Property>
+        <Property Name="ItemBorder" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="TextAlignment" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="TextBackColor" Type="System.Int32">
+          <Value>16777215</Value>
+        </Property>
+        <Property Name="TextForeColor" Type="System.Int32">
+          <Value>-16777216</Value>
+        </Property>
+        <Property Name="TextFontSize" Type="System.Int32">
+          <Value>10</Value>
+        </Property>
+        <Property Name="TextFontWeight" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="BlueNumeric" Style="BaseItem" Type="DVNumeric">
+      <Properties>
+        <Property Name="DecimalPlaces" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="AllowNoneValue" Type="System.Boolean">
+          <Value>False</Value>
+        </Property>
+        <Property Name="ShowArrows" Type="System.Boolean">
+          <Value>True</Value>
+        </Property>
+        <Property Name="Increment" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="Minimum" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="Maximum" Type="System.Int32">
+          <Value>100</Value>
+        </Property>
+        <Property Name="UpDownAlign" Type="System.Int32">
+          <Value>2</Value>
+        </Property>
+        <Property Name="UpDownStyle" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="UpDownWidth" Type="System.Int32">
+          <Value>12</Value>
+        </Property>
+        <Property Name="VerticalAlignment" Type="System.Int32">
+          <Value>2</Value>
+        </Property>
+        <Property Name="TextAlignment" Type="System.Int32">
+          <Value>2</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="BlueCheckBox" Style="BaseItem" Type="DVCheckBox">
+      <Properties>
+        <Property Name="CheckBoxLocation" Type="System.Int32">
+          <Value>1</Value>
+        </Property>
+        <Property Name="FitToHeight" Type="System.Boolean">
+          <Value>False</Value>
+        </Property>
+        <Property Name="ThreeState" Type="System.Boolean">
+          <Value>False</Value>
+        </Property>
+        <Property Name="VerticalAlignment" Type="System.Int32">
+          <Value>2</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="BlueLink" Style="BaseItem" Type="DVLink">
+      <Properties>
+        <Property Name="MultiLine" Type="System.Boolean">
+          <Value>False</Value>
+        </Property>
+        <Property Name="VerticalAlignment" Type="System.Int32">
+          <Value>2</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="BlueDateTime" Style="BaseItem" Type="DVDateTime">
+      <Properties>
+        <Property Name="AllowNoneDate" Type="System.Boolean">
+          <Value>True</Value>
+        </Property>
+        <Property Name="NoneText" Type="System.String">
+          <Value>None</Value>
+        </Property>
+        <Property Name="ShowDropDown" Type="System.Boolean">
+          <Value>True</Value>
+        </Property>
+        <Property Name="TodayText" Type="System.String">
+          <Value>Today</Value>
+        </Property>
+        <Property Name="MaxDate" Type="System.DateTime">
+          <Value>12/31/9999 23:59:59</Value>
+        </Property>
+        <Property Name="DateTimeStyle" Type="System.Int32">
+          <Value>0</Value>
+        </Property>
+        <Property Name="SetDefaultValues" Type="System.Boolean">
+          <Value>True</Value>
+        </Property>
+        <Property Name="VerticalAlignment" Type="System.Int32">
+          <Value>2</Value>
+        </Property>
+      </Properties>
+    </Style>
+    <Style Name="s" Style="BlueHeader1" Type="TextCell">
+      <Properties />
+    </Style>
+    <Style Name="sas" Style="MainCaption" Type="DVCaption">
+      <Properties />
+    </Style>
+  </Styles>
+</GlobalStyles>
